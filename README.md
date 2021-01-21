@@ -39,4 +39,4 @@
 - [Washi](https://github.com/Washi1337/) For [AsmResolver](https://github.com/Washi1337/AsmResolver) !
 - [0xd4d](https://github.com/0xd4d/) For [Dnlib](https://github.com/0xd4d/dnlib) !
 - [Dr4k0nia](https://github.com/dr4k0nia) For [UnScrambler](https://github.com/dr4k0nia/Unscrambler) !
-- [HandyOrg](https://github.com/HandyOrg/) For [Handy-Controls](https://github.com/HandyOrg/HandyControl)
+- [HandyOrg](https://github.com/HandyOrg/) For [Handy-Controls](https://github.com/HandyOrg/HandyControl) !
