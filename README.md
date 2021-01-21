@@ -26,6 +26,15 @@
 - System.Reflection For Protections Uses Invoke etc. !
 # Simple Preview's
 - On [Previews](https://github.com/CursedLand/UnSealer/blob/master/Previews.md)
+# Formal Added Protections
+- Anti Invoke Patcher | Lib : Dnlib | Author : CursedLand
+- CawkVM DeVirtualizator | Lib : Dnlib & Reflection | Author : CursedLand
+- Cyphor Constants Decrypt | Lib : Dnlib & Reflection | Author : CursedLand
+- Junk Remover | Lib : Dnlib | Author : CursedLand
+- Calli Fixer | Lib : AsmResolver | Author : Dr4k0nia
+- Math Remover | Lib : AsmResolver | Author : Dr4k0nia
+- SizeOf Fixer | Lib : AsmResolver | Author : Dr4k0nia
+- Universal String Decryptor | Lib : AsmResolver | Author : CursedLand
 # Credits
 - [Washi](https://github.com/Washi1337/) For [AsmResolver](https://github.com/Washi1337/AsmResolver) !
 - [0xd4d](https://github.com/0xd4d/) For [Dnlib](https://github.com/0xd4d/dnlib) !
