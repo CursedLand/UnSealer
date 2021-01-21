@@ -1,6 +1,6 @@
 # UnSealer
 - A Deobfuscator Base Which Uses Plugins And Multi-Platform Of Assembly Lib's | Its Easy To Build On Download Now Make Ur Own Plugin !
-
+- UnSealer is released under the GPLv3 license.
 # How To Use
 
 - 1 - Drag Your Assembly 
