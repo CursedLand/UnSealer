@@ -1,4 +1,6 @@
 ﻿using AsmResolver.DotNet;
+using AsmResolver.DotNet.Builder;
+using AsmResolver.DotNet.Code.Cil;
 using dnlib.DotNet;
 using dnlib.DotNet.Writer;
 using System.Reflection;
@@ -47,13 +49,17 @@ namespace UnSealer.Core
                         Logger = DummyLogger.NoThrowInstance,
                         MetadataOptions = { Flags = MetadataFlags.PreserveAll }
                     };
-                    DnModule.NativeWrite(NewPath.Replace("HereWeGo", "DnLibed"), UnMangedWriter);
+                    DnModule.NativeWrite(NewPath.Replace("HereWeGo", "-DnLibed"), UnMangedWriter);
                     Log.Info("Done Saved Native Dnlib Module");
                 }
             }
             if (AsmModule != null)
             {
-                AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"));
+                var IMPEIB = new ManagedPEImageBuilder();
+                DotNetDirectoryFactory Factory = new DotNetDirectoryFactory();
+                Factory.MethodBodySerializer = new CilMethodBodySerializer { ComputeMaxStackOnBuildOverride = false };
+                IMPEIB.DotNetDirectoryFactory = Factory;
+                AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"), IMPEIB);
                 Log.Info("Done Saved AsmResolver Module");
             }
         }
