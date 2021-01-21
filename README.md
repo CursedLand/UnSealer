@@ -7,6 +7,8 @@
 - 2 - Choose Protections
 - 3 - Click Execute Protections
 
+# Release Download
+- [Click-Me!](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
 # How To Make Your Awesome Plugin ?!
 
 - 1 - Add Latest UnSealer.Core.dll To Your Project -> [Click-To-Download-Latest-Core](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
