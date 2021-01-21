@@ -57,6 +57,7 @@ namespace UnSealer.Core
             {
                 var IMPEIB = new ManagedPEImageBuilder();
                 DotNetDirectoryFactory Factory = new DotNetDirectoryFactory();
+                Factory.MetadataBuilderFlags = MetadataBuilderFlags.PreserveAll;
                 Factory.MethodBodySerializer = new CilMethodBodySerializer { ComputeMaxStackOnBuildOverride = false };
                 IMPEIB.DotNetDirectoryFactory = Factory;
                 AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"), IMPEIB);
@@ -72,7 +73,7 @@ namespace UnSealer.Core
         /// </summary>
         public ModuleDefinition AsmModule { set; get; }
         /// <summary>
-        /// Module In Reflection Way ( For Plugins Who Uses Invoke )
+        /// Module In Reflection Way ( For Plugins Who Uses Invoke etc. )
         /// </summary>
         public Module SysModule { set; get; }
         /// <summary>
