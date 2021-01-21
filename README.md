@@ -25,7 +25,7 @@
 - Dnlib
 - System.Reflection For Protections Uses Invoke etc. !
 # Simple Preview's
-- On [Previews](https://github.com/dr4k0nia)
+- On [Previews](https://github.com/CursedLand/UnSealer/blob/master/Previews.md)
 # Credits
 - [Washi](https://github.com/Washi1337/) For [AsmResolver](https://github.com/Washi1337/AsmResolver) !
 - [0xd4d](https://github.com/0xd4d/) For [Dnlib](https://github.com/0xd4d/dnlib) !
