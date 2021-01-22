@@ -12,6 +12,8 @@ namespace UnSealer.Protections.Dnlib
 
         public override ProtectionType Type => ProtectionType.Dnlib;
 
+        public override string Description => "Patching AntiInvoking";
+
         public override void Execute(Context Context)
         {
             foreach(var TypeDef in Context.DnModule.Types.Where(x => x.HasMethods))

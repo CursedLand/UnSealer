@@ -14,6 +14,8 @@ namespace UnSealer.Protections.Dnlib
 
         public override ProtectionType Type => ProtectionType.Dnlib;
 
+        public override string Description => "A DeVirtualizer For CawkVM";
+
         public override void Execute(Context Context) // Change "ConvertBack::Runner" for Modded Versions
         {
             if (Context.SysModule != null && Context.DnModule != null)

@@ -39,7 +39,7 @@
                 <Grid Background="{StaticResource BackgroundBrush}">
                     <GroupBox FontFamily="Fonts/FontAwesome.otf" Header="Logger" Margin="10" Style="{StaticResource GroupBoxTabBaseStyle}" Background="GhostWhite">
                         <Grid>
-                            <hc:TextBox Name="LoggerText" HorizontalAlignment="Left" Height="353" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="463" HorizontalContentAlignment="Center" SpellCheck.IsEnabled="True" VerticalContentAlignment="Top" IsReadOnly="True" SelectionOpacity="0.2" FontWeight="Bold" TextDecorations="{x:Null}" BorderBrush="#FFABC8F9" FontFamily="Fonts/FontAwesome.otf">
+                            <hc:TextBox Name="LoggerText" HorizontalAlignment="Left" Height="353" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="463" SpellCheck.IsEnabled="True" VerticalContentAlignment="Top" IsReadOnly="True" SelectionOpacity="0.2" FontWeight="Bold" TextDecorations="{x:Null}" BorderBrush="#FFABC8F9" FontFamily="Fonts/FontAwesome.otf">
                                 <hc:TextBox.Background>
                                     <SolidColorBrush Color="{DynamicResource RegionColor}"/>
                                 </hc:TextBox.Background>

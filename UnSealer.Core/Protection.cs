@@ -11,6 +11,10 @@
         /// </summary>
         public abstract string Author { get; }
         /// <summary>
+        /// A Quite Description For Protection
+        /// </summary>
+        public abstract string Description { get; }
+        /// <summary>
         /// Type Of Lib Used
         /// </summary>
         public abstract ProtectionType Type { get; }

@@ -16,6 +16,8 @@ namespace UnSealer.Protections.Dnlib
 
         public override ProtectionType Type => ProtectionType.Dnlib;
 
+        public override string Description => "A Cyphor Constants Decryptor";
+
         public override void Execute(Context Context)
         {
             if (Context.DnModule != null && Context.SysModule != null)
