@@ -34,7 +34,7 @@ namespace UnSealer
                 .Discover(GetLog, ref ProtectionsAvailable);
             //GetLog.Debug("Hi xD"); nvm lol
             foreach (var p in ProtectionsAvailable)
-                UserProtectionList.Items.Add(new ComboBoxItem() { Content = p.Name });
+                UserProtectionList.Items.Add(new ComboBoxItem() { Content = p.Name, ToolTip = p.Description });
         }
         #endregion
 

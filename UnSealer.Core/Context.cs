@@ -1,6 +1,7 @@
 ﻿using AsmResolver.DotNet;
 using AsmResolver.DotNet.Builder;
 using AsmResolver.DotNet.Code.Cil;
+using AsmResolver.PE.DotNet.Builder;
 using dnlib.DotNet;
 using dnlib.DotNet.Writer;
 using System.Reflection;
@@ -13,7 +14,7 @@ namespace UnSealer.Core
         /// Initialize For Context
         /// </summary>
         /// <param name="Location"> Module Path </param>
-        /// <param name="Logger"> Logger We Created On MainWindow ;D </param>
+        /// <param name="Logger"> Logger's We Created On MainWindow ;D </param>
         public Context(string Location, Logger[] Logger)
         {
             PathIs = Location;
@@ -55,12 +56,19 @@ namespace UnSealer.Core
             }
             if (AsmModule != null)
             {
-                var IMPEIB = new ManagedPEImageBuilder();
-                DotNetDirectoryFactory Factory = new DotNetDirectoryFactory();
-                Factory.MetadataBuilderFlags = MetadataBuilderFlags.PreserveAll;
-                Factory.MethodBodySerializer = new CilMethodBodySerializer { ComputeMaxStackOnBuildOverride = false };
-                IMPEIB.DotNetDirectoryFactory = Factory;
-                AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"), IMPEIB);
+                var IMPEIB = new ManagedPEImageBuilder()
+                {
+                    DotNetDirectoryFactory = new DotNetDirectoryFactory()
+                    {
+                        MetadataBuilderFlags = MetadataBuilderFlags.PreserveAll,
+                        MethodBodySerializer = new CilMethodBodySerializer { ComputeMaxStackOnBuildOverride = false }
+                    }
+                };
+                var Img = IMPEIB.CreateImage(AsmModule);
+                if (!Img.DiagnosticBag.IsFatal)
+                    new ManagedPEFileBuilder().CreateFile(Img.ConstructedImage).Write(NewPath.Replace("HereWeGo", "-AsmResolved"));
+                else
+                    AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"));
                 Log.Info("Done Saved AsmResolver Module");
             }
         }

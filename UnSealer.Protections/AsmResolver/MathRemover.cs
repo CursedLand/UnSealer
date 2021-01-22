@@ -24,6 +24,8 @@ namespace UnSealer.Protections.AsmResolver
 
         public override ProtectionType Type => ProtectionType.AsmResolver;
 
+        public override string Description => "Remove Math.*() Mutations.";
+
         public override void Execute(Context Context)
         {
             foreach(var Type in Context.AsmModule.GetAllTypes())

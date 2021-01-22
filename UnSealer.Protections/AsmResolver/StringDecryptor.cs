@@ -18,6 +18,8 @@ namespace UnSealer.Protections.AsmResolver
 
         public override ProtectionType Type => ProtectionType.AsmResolver;
 
+        public override string Description => "A String Decryptor Uses Auto Param Collector";
+
         public override void Execute(Context Context)
         {
             if (Utils.DecMethod != null)

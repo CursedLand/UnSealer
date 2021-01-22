@@ -11,11 +11,13 @@ namespace UnSealer.Protections.Dnlib
 
         public override ProtectionType Type => ProtectionType.Dnlib;
 
+        public override string Description => "Removes Types Have No Methods & Fields";
+
         public override void Execute(Context Context)
         {
             if (Context.DnModule != null)
             {
-                foreach (var TypeDef in Context.DnModule.Types.Where(x => !x.HasMethods).ToArray())
+                foreach (var TypeDef in Context.DnModule.Types.Where(x => !x.HasMethods && !x.HasFields).ToArray())
                 {
                     Context.DnModule.Types.Remove(TypeDef);
                 }
