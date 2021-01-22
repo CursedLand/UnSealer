@@ -9,6 +9,11 @@
 
 # Release Download
 - [Click-Me!](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
+
+# String Decryptor Usage ?
+
+- [Full-Tutorial-Here!](https://github.com/CursedLand/UnSealer/blob/master/stringdecryptorusage.md)
+
 # How To Make Your Awesome Plugin ?!
 
 - 1 - Add Latest UnSealer.Core.dll To Your Project -> [Click-To-Download-Latest-Core](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
