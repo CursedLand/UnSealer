@@ -26,6 +26,6 @@
 
 ![alt text](https://github.com/CursedLand/UnSealer/blob/master/IPreview/RetMain.PNG)
 
-- 5 - Click Execute Protections ! And Enjoy Assembly Decrypted Strings
+- 5 - Click Execute Protections ! And Enjoy Assembly Decrypted Strings ;D
 
 ![alt text](https://github.com/CursedLand/UnSealer/blob/master/IPreview/Enjoy.PNG)
