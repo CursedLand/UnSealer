@@ -37,9 +37,9 @@ namespace UnSealer.Protections.AsmResolver
                                 if (IL[x].OpCode == CilOpCodes.Call && IL[x].Operand is IMethodDescriptor && IL[x].Operand.ToString().Contains(Utils.DecMethod.Name) && ((IMethodDescriptor)IL[x].Operand).Resolve().Parameters.Count == Utils.DecMethod.Resolve().Parameters.Count)
                                 {
                                     Context.StringLog.Debug($"Found Encrypted Str ...");
-                                    var Params = ParamsParser(Utils.DecMethod.Resolve(), x, IL, Context.StringLog);
+                                    var Params = ParamsParser(Utils.DecMethod.Resolve(), x, IL, Context.SysModule);
                                     var Ref = ((MethodInfo)Context.SysModule.ResolveMethod(Utils.DecMethod.MetadataToken.ToInt32()));
-                                    var Result = (string)Ref.Invoke(null, Params);
+                                    var Result = Ref.Invoke(null, Params);
                                     Context.StringLog.Debug($"Restored String : {Result}");
                                     IL[x] = new CilInstruction(CilOpCodes.Ldstr, Result);
                                     foreach (var i in GetJunk)
@@ -57,16 +57,25 @@ namespace UnSealer.Protections.AsmResolver
             }
             else { Context.StringLog.Custom("Skipping", "Decryption Method Empty.."); }
         }
-        public object[] ParamsParser(MethodDefinition DecMethod, int Index, CilInstructionCollection IL, Logger L)
+
+        public object[] ParamsParser(MethodDefinition DecMethod, int Index, CilInstructionCollection IL, Module Module)
         {
             var C = DecMethod.Parameters.Count; int ParsedIndex = -0; object[] ParsedParams = new object[C]; var Temp = 0;
             for (int x = -C + Index; x < Index; x++)
             {
-                ParsedParams[ParsedIndex++] = Convert.ChangeType(IL[x].Operand, System.Type.GetType(DecMethod.Parameters[Temp++].ParameterType.GetTypeFullName()));
-                GetJunk.Add(IL[x]);
+                if (IL[x].OpCode == CilOpCodes.Ldsfld) {        // Yes Sorry for Pseudo code here :)
+                    ParsedParams[ParsedIndex++] = Convert.ChangeType(GetFieldValue(Module, ((IFieldDescriptor)IL[x].Operand).MetadataToken.ToInt32()), System.Type.GetType(DecMethod.Parameters[Temp++].ParameterType.GetTypeFullName())); GetJunk.Add(IL[x]);
+                }
+                else {
+                    ParsedParams[ParsedIndex++] = Convert.ChangeType(IL[x].Operand, System.Type.GetType(DecMethod.Parameters[Temp++].ParameterType.GetTypeFullName()));
+                    GetJunk.Add(IL[x]);
+                }
             }
             return ParsedParams;
         }
+
+        public object GetFieldValue(Module RefModule, int MDToken) => RefModule.ResolveField(MDToken).GetValue(null);
+
         public List<CilInstruction> GetJunk = new List<CilInstruction>();
     }
 }

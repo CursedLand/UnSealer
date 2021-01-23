@@ -43,12 +43,13 @@
   <ItemGroup>
     <Compile Include="AsmResolver\CalliFixer.cs" />
     <Compile Include="AsmResolver\MathRemover.cs" />
-    <Compile Include="AsmResolver\SizeOfFixer.cs" />
+    <Compile Include="Dnlib\SizeOfFixer.cs" />
     <Compile Include="AsmResolver\StringDecryptor.cs" />
     <Compile Include="Dnlib\AntiInvokePatch.cs" />
     <Compile Include="Dnlib\CawkDevirt.cs" />
     <Compile Include="Dnlib\CyphorConstants.cs" />
     <Compile Include="Dnlib\JunkRemover.cs" />
+    <Compile Include="Dnlib\OutlinerFixer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
