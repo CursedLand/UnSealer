@@ -42,7 +42,8 @@
 - Junk Remover | Lib : Dnlib | Author : CursedLand
 - Calli Fixer | Lib : AsmResolver | Author : Dr4k0nia
 - Math Remover | Lib : AsmResolver | Author : Dr4k0nia
-- SizeOf Fixer | Lib : AsmResolver | Author : Dr4k0nia
+- SizeOf Fixer | Lib : Dnlib | Author : CursedLand
+- Outliner Fixer | Lib : Dnlib | Author : CursedLand
 - Universal String Decryptor | Lib : AsmResolver | Author : CursedLand
 # Credits
 - [Washi](https://github.com/Washi1337/) For [AsmResolver](https://github.com/Washi1337/AsmResolver) !
