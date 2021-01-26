@@ -8,7 +8,7 @@ namespace UnSealer.Core
         /// <summary>
         /// Loads Module In temp way To Get Refs Used
         /// </summary>
-        public ModuleDefMD TempModule { set; get; }
+        private ModuleDefMD TempModule { set; get; }
         /// <summary>
         /// Initialize Constructor
         /// </summary>

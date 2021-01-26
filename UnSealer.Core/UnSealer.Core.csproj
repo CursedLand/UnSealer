@@ -52,6 +52,7 @@
     <Compile Include="Protection.cs" />
     <Compile Include="ProtectionType.cs" />
     <Compile Include="Utils\AsmResolver\Utils.cs" />
+    <Compile Include="Utils\Dnlib\AntiTamperUtils\Utils.cs" />
     <Compile Include="Utils\Dnlib\CawkRuntime\ConvertBack.cs" />
     <Compile Include="Utils\Dnlib\CawkRuntime\Embed.cs" />
     <Compile Include="Utils\Dnlib\CawkRuntime\ExceptionHandlers\ExceptionHandlerClass.cs" />

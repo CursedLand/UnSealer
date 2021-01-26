@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="AsmResolver\CalliFixer.cs" />
     <Compile Include="AsmResolver\MathRemover.cs" />
+    <Compile Include="Dnlib\AntiTamperRemover.cs" />
+    <Compile Include="Dnlib\Int2FieldFixer.cs" />
     <Compile Include="Dnlib\SizeOfFixer.cs" />
     <Compile Include="AsmResolver\StringDecryptor.cs" />
     <Compile Include="Dnlib\AntiInvokePatch.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="Dnlib\CyphorConstants.cs" />
     <Compile Include="Dnlib\JunkRemover.cs" />
     <Compile Include="Dnlib\OutlinerFixer.cs" />
+    <Compile Include="Dnlib\StringLenFixer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
