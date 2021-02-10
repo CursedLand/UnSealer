@@ -17,7 +17,7 @@ namespace UnSealer.Core.PluginDiscovery
             IList<Assembly> Assemblies = new List<Assembly>();
             foreach (var name in Directory.GetFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "*.dll"))
             {
-                if (name.Contains("dnlib") | name.Contains("AsmResolver") | name.Contains("UnSealer.Core") | name.Contains("HandyControl")) continue;
+                if (name.Contains("dnlib") | name.Contains("AsmResolver") | name.Contains("UnSealer.Core") | name.Contains("HandyControl") | name.Contains("de4dot")) continue;
                 try
                 {
                     var Ass = Assembly.UnsafeLoadFrom(name);
