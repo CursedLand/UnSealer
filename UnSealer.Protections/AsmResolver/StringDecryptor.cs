@@ -126,7 +126,7 @@ namespace UnSealer.Protections.AsmResolver
 
         public object InvokeAsDynamic(Module Module, MethodDefinition CMethod, MethodDefinition DecMethod, object[] Params)
         {
-            // Full Bypass Any AntiInvoking Technique (StackTrace, GetCallingAssembly, etc.)
+            // Semi Bypass Any AntiInvoking Technique (StackTrace, GetCallingAssembly, etc.)
             var rMethod = ((MethodInfo)Module.ResolveMethod(DecMethod.MetadataToken.ToInt32()));
 
             var rType = rMethod.ReturnType;

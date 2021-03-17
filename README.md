@@ -45,6 +45,9 @@
 - SizeOf Fixer | Lib : Dnlib | Author : CursedLand
 - Outliner Fixer | Lib : Dnlib | Author : CursedLand
 - Universal String Decryptor | Lib : AsmResolver | Author : CursedLand
+- StringLen Fixer | Lib : Dnlib | Author : CursedLand
+- Int2Field Fixer | Lib : Dnlib | Author : CursedLand
+- AntiTamperRemover | Lib : Dnlib | Author : Unknown
 # Credits
 - [Washi](https://github.com/Washi1337/) For [AsmResolver](https://github.com/Washi1337/AsmResolver) !
 - [0xd4d](https://github.com/0xd4d/) For [Dnlib](https://github.com/0xd4d/dnlib) !
