@@ -14,7 +14,7 @@ namespace UnSealer.Protections.Dnlib
 
         public override ProtectionType Type => ProtectionType.Dnlib;
 
-        public override string Description => "A DeVirtualizer For CawkVM";
+        public override string Description => "A Devirtualizer For CawkVM";
 
         public override void Execute(Context Context) // Change "ConvertBack::Runner" for Modded Versions
         {
@@ -39,10 +39,8 @@ namespace UnSealer.Protections.Dnlib
                                     var Position = IL[x - 4].GetLdcI4Value();
                                     var Size = IL[x - 3].GetLdcI4Value();
                                     var ID = IL[x - 2].GetLdcI4Value();
-                                    object[] Params = new object[MethodDef.Parameters.Count]; int Index = 0;
-                                    foreach (var Param in MethodDef.Parameters) { Params[Index++] = Param.Type.Next; }
                                     var methodBase = Context.SysModule.ResolveMethod(MethodDef.MDToken.ToInt32());
-                                    var dynamicMethod = ConvertBack.Runner(Position, Size, ID, Params, methodBase);
+                                    var dynamicMethod = ConvertBack.Runner(Position, Size, ID, new object[methodBase.GetParameters().Length], methodBase);
                                     var dynamicReader = Activator.CreateInstance(
                                                         typeof(System.Reflection.Emit.DynamicMethod).Module.GetTypes()
                                                         .FirstOrDefault(t => t.Name == "DynamicResolver"),

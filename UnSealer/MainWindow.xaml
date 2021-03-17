@@ -6,7 +6,12 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"       
         xmlns:local="clr-namespace:UnSealer"
         mc:Ignorable="d"
-        Title="UnSealer • v2" Height="490.909" Width="516.667" ActiveGlowColor="WhiteSmoke" ResizeMode="NoResize" Icon="UnIcon.png">
+        Title="UnSealer • v2"
+        Height="490.909" 
+        Width="516.667" 
+        ActiveGlowColor="GhostWhite"
+        ResizeMode="CanMinimize" 
+        Icon="UnIcon.png">
     <Grid>
         <hc:TabControl Style="{StaticResource TabControlInLine}" IsAnimationEnabled="True">
             <hc:TabItem Header="Main">
@@ -48,7 +53,7 @@
                     </GroupBox>
                 </Grid>
             </hc:TabItem>
-            <hc:TabItem Header="String Decryptor">
+            <hc:TabItem Header="String Decrypt">
                 <Grid>
                     <GroupBox Header="Universal String Decryptor" Margin="10" Style="{StaticResource GroupBoxTabBaseStyle}" Background="GhostWhite" FontFamily="Fonts/FontAwesome.otf">
                         <Grid>
@@ -74,7 +79,7 @@
                             <hc:ImageBlock Name="GithubPic" Source="Images/UnGithub.png" Margin="36,30,364,30" ToolTip="Go To Github Page !" MouseDown="ImageBlock_MouseDown"></hc:ImageBlock>
                             <StackPanel TextBlock.FontSize="13" Margin="183,42,84,42"
                         VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Go To Github Page !" MouseDown="StackPanel_MouseDown">
-                                <TextBlock Foreground="#FF999999" FontWeight="Bold" >UnSealer • V1.0</TextBlock>
+                                <TextBlock Foreground="#FF999999" FontWeight="Bold" >UnSealer • v2</TextBlock>
                                 <TextBlock Foreground="#FF999999" FontWeight="Bold" >Developed By CursedLand#2802</TextBlock>
                                 <TextBlock Foreground="#FF999999" FontWeight="Bold" >Easiest Solution For UnPacking / RE</TextBlock>
                             </StackPanel>

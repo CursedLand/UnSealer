@@ -42,7 +42,7 @@ namespace UnSealer.Protections.AsmResolver
                                     object Result = null;
                                     var Params = ParamsParser(Utils.DecMethod.Resolve(), x, IL, Context.SysModule);
                                     var Ref = ((MethodInfo)Context.SysModule.ResolveMethod(Utils.DecMethod.MetadataToken.ToInt32()));
-                                    if (Utils.DecMethod.Resolve().CilMethodBody.Instructions.Any<CilInstruction>(i => i.ToString().Contains("StackTrace") || i.ToString().Contains("GetCallingAssembly")))
+                                    if (Utils.DecMethod.Resolve().CilMethodBody.Instructions.Any(i => i.ToString().Contains("StackTrace") || i.ToString().Contains("GetCallingAssembly")))
                                         Result = InvokeAsDynamic(Context.SysModule, Method, Utils.DecMethod.Resolve(), Params);
                                     else
                                         Result = Ref.Invoke(null, Params);
@@ -83,7 +83,7 @@ namespace UnSealer.Protections.AsmResolver
 
                 object Result = null;
 
-                if (IL[x].OpCode == CilOpCodes.Stsfld)
+                if ((IL[x].OpCode == CilOpCodes.Stsfld || IL[x].OpCode == CilOpCodes.Ldsfld) && (IL[x].Operand is FieldDefinition _field && _field.IsStatic))
                     Result = Module.ResolveField(((IFieldDescriptor)IL[x].Operand).MetadataToken.ToInt32()).GetValue(null);
 
                 var CurrentT = rMethodParams[pi++].ParameterType;
@@ -143,7 +143,7 @@ namespace UnSealer.Protections.AsmResolver
             for (int i = 0; i < Params.Length; i++)
                 ILGen.Emit(OpCodes.Ldarg, i);
 
-            ILGen.Emit(OpCodes.Call, rMethod);
+            ILGen.Emit(OpCodes.Call, rMethod); // No Support for generic methods :)
 
             ILGen.Emit(OpCodes.Ret);
 
