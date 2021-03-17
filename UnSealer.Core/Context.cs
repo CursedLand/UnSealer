@@ -58,17 +58,22 @@ namespace UnSealer.Core
             {
                 var IMPEIB = new ManagedPEImageBuilder()
                 {
-                    DotNetDirectoryFactory = new DotNetDirectoryFactory()
+                    DotNetDirectoryFactory = new DotNetDirectoryFactory() 
                     {
                         MetadataBuilderFlags = MetadataBuilderFlags.PreserveAll,
-                        MethodBodySerializer = new CilMethodBodySerializer { ComputeMaxStackOnBuildOverride = false }
+                        MethodBodySerializer = new CilMethodBodySerializer 
+                        {
+                            ComputeMaxStackOnBuildOverride = false 
+                        }
                     }
                 };
-                var Img = IMPEIB.CreateImage(AsmModule);
-                if (!Img.DiagnosticBag.IsFatal)
-                    new ManagedPEFileBuilder().CreateFile(Img.ConstructedImage).Write(NewPath.Replace("HereWeGo", "-AsmResolved"));
+                var IR = IMPEIB.CreateImage(AsmModule);
+                var FBuilder = new ManagedPEFileBuilder();
+                var File = FBuilder.CreateFile(IR.ConstructedImage);
+                if (!IR.DiagnosticBag.IsFatal)
+                    File.Write(NewPath.Replace("HereWeGo", "-AsmResolved")); // Ignore Errors.
                 else
-                    AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"));
+                    AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"), IMPEIB);
                 Log.Info("Done Saved AsmResolver Module");
             }
         }

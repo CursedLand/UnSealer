@@ -6,7 +6,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"       
         xmlns:local="clr-namespace:UnSealer"
         mc:Ignorable="d"
-        Title="UnSealer • V1.0" Height="490.909" Width="516.667" ActiveGlowColor="WhiteSmoke" ResizeMode="NoResize" Icon="UnIcon.png">
+        Title="UnSealer • v2" Height="490.909" Width="516.667" ActiveGlowColor="WhiteSmoke" ResizeMode="NoResize" Icon="UnIcon.png">
     <Grid>
         <hc:TabControl Style="{StaticResource TabControlInLine}" IsAnimationEnabled="True">
             <hc:TabItem Header="Main">
@@ -54,9 +54,12 @@
                         <Grid>
                             <GroupBox Header="Info" Style="{StaticResource GroupBoxTabBaseStyle}" Background="#FFF3F3F3" Margin="10,10,10,198" FontFamily="Fonts/FontAwesome.otf">
                                 <Grid>
-                                    <hc:TextBox x:Name="DecName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374" HorizontalContentAlignment="Center" FontFamily="Fonts/FontAwesome.otf" BorderBrush="#FFABC8F9" Text="Method Name"/>
-                                    <Button x:Name="DiscoverDecMethod" Content="Discover !" HorizontalAlignment="Stretch" Margin="10,45,10,10" Foreground="Black" Background="{StaticResource BorderBrush}" Height="72" Click="DiscoverDecMethod_Click"/>
-                                    <hc:TextBox x:Name="ParamsC" HorizontalAlignment="Left" Height="23" Margin="392,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" HorizontalContentAlignment="Center" FontFamily="Fonts/FontAwesome.otf" BorderBrush="#FFABC8F9" Text="2" ToolTip="Params Count"/>
+                                    <hc:TextBox x:Name="DecName" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" HorizontalContentAlignment="Center" FontFamily="Fonts/FontAwesome.otf" BorderBrush="#FFABC8F9" Text="Method Name"/>
+                                    <Button x:Name="DiscoverDecMethod" Content="Discover !" HorizontalAlignment="Stretch" Margin="10,45,63,10" Foreground="Black" Background="{StaticResource BorderBrush}" Height="72" Click="DiscoverDecMethod_Click"/>
+                                    <hc:TextBox x:Name="ParamsC" HorizontalAlignment="Left" Height="23" Margin="397,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Center" FontFamily="Fonts/FontAwesome.otf" BorderBrush="#FFABC8F9" Text="2" ToolTip="Params Count"/>
+                                    <hc:TextBox x:Name="DecMDToken" HorizontalAlignment="Left" Height="23" Margin="205,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" HorizontalContentAlignment="Center" FontFamily="Fonts/FontAwesome.otf" BorderBrush="#FFABC8F9" Text="MDToken" IsEnabled="False"/>
+                                    <ToggleButton Height="34" Content="MD" x:Name="IsMD" Margin="397,45,10,46" Width="48" IsChecked="False" Checked="IsMD_Checked" Unchecked="IsMD_Unchecked"/>
+                                    <ToggleButton Height="34" Content="MN" x:Name="IsMN" Margin="397,83,10,10" Width="48" Checked="IsMN_Checked" Unchecked="IsMN_Unchecked" IsChecked="True"/>
                                 </Grid>
                             </GroupBox>
                             <hc:TextBox Name="StringLogger" HorizontalAlignment="Left" Height="183" Margin="10,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="463" FontFamily="Fonts/FontAwesome.otf" SpellCheck.IsEnabled="True" VerticalContentAlignment="Top" IsReadOnly="True" SelectionOpacity="0.2" FontWeight="Bold" TextDecorations="{x:Null}" BorderBrush="#FFABC8F9"/>

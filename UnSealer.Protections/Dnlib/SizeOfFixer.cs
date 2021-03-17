@@ -1,8 +1,9 @@
 ﻿using dnlib.DotNet;
 using dnlib.DotNet.Emit;
 using System.Linq;
-using System.Runtime.InteropServices;
+using System.Reflection.Emit;
 using UnSealer.Core;
+using OpCodes = System.Reflection.Emit.OpCodes;
 
 namespace UnSealer.Protections.Dnlib
 {
@@ -25,11 +26,19 @@ namespace UnSealer.Protections.Dnlib
                     var IL = MethodDef.Body.Instructions;
                     foreach (var Inst in IL)
                     {
-                        if (Inst.OpCode == OpCodes.Sizeof)
+                        if (Inst.OpCode == dnlib.DotNet.Emit.OpCodes.Sizeof)
                         {
-                            var Size = Marshal.SizeOf(System.Type.GetType(((ITypeDefOrRef)Inst.Operand).ReflectionFullName));
-                            Inst.OpCode = OpCodes.Ldc_I4;
-                            Inst.Operand = Size;
+                            // More Comptapility.
+                            var Dynamic = new DynamicMethod(string.Empty, typeof(int), new[]
+                            {
+                                typeof(int)
+                            });
+                            var ILGen = Dynamic.GetILGenerator();
+                            ILGen.Emit(OpCodes.Sizeof, Context.SysModule.ResolveType(((ITypeDefOrRef)Inst.Operand).MDToken.ToInt32()));
+                            ILGen.Emit(OpCodes.Ret);
+                            var i = Instruction.CreateLdcI4((int)Dynamic.Invoke(null, null));
+                            Inst.OpCode = i.OpCode;
+                            Inst.Operand = i.Operand;
                         }
                     }
                 }

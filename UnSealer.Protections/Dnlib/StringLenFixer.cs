@@ -31,7 +31,7 @@ namespace UnSealer.Protections.Dnlib
                             Context.Log.Debug($"Fixed StrLen : {IL[x].GetLdcI4Value()}");
                         }
                         if (IL[x].OpCode == OpCodes.Ldstr &&
-                            IL[x + 1].OpCode == OpCodes.Call && IL[x + 1].Operand.ToString().Contains("get_Length"))
+                            (IL[x + 1].OpCode == OpCodes.Call || IL[x].OpCode == OpCodes.Callvirt) && IL[x + 1].Operand.ToString().Contains("get_Length"))
                         {
                             IL[x] = Instruction.CreateLdcI4(IL[x].Operand.ToString().Length);
                             IL.RemoveAt(x + 1);

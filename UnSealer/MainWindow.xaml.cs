@@ -10,7 +10,6 @@ using System.Windows.Controls;
 using UnSealer.Core;
 using UnSealer.Core.PluginDiscovery;
 using UnSealer.Core.Utils.AsmResolver;
-using MessageBox = HandyControl.Controls.MessageBox;
 #endregion
 
 namespace UnSealer
@@ -59,7 +58,7 @@ namespace UnSealer
             {
                 if (AssemblyLocation.Text != string.Empty)
                 {
-                    Utils.DiscoverMethod(new string[] { AssemblyLocation.Text, DecName.Text, ParamsC.Text }, new Logger(StringLogger));
+                    Utils.DiscoverMethod(new string[] { AssemblyLocation.Text, DecName.Text, ParamsC.Text }, new Logger(StringLogger), (bool)IsMD.IsChecked, DecMDToken.Text);
                 }
                 else { MessageBox.Show("Load Assembly First !", "-_-", MessageBoxButton.OK, MessageBoxImage.Error); }
             }));
@@ -112,8 +111,8 @@ namespace UnSealer
             /*}));*/
             new Thread(new ThreadStart(() =>
             {
-                try
-                {
+                /*try
+                {*/
                     foreach (var Protection in TempProtects)
                         foreach (var ProtectExecute in ProtectionsAvailable)
                             if (ProtectExecute.Name.Equals(Protection))
@@ -123,11 +122,11 @@ namespace UnSealer
                                 Context.Log.Info($"Executed : {ProtectExecute.Name} Successfly !");
                             }
                     Context.SaveContext();
-                }
+                /*}
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error : {ex.Message}", "Uhm -_-", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                }*/
             })).Start();
         }
         #endregion
@@ -171,6 +170,29 @@ namespace UnSealer
             {
                 // Ignore :D
             }
+        }
+        #endregion
+
+        #region SECRETREGIONS
+        private void IsMN_Checked(object sender, RoutedEventArgs e)
+        {
+            DecName.IsEnabled = true;
+            DecMDToken.IsEnabled = false;
+        }
+        private void IsMD_Checked(object sender, RoutedEventArgs e)
+        {
+            DecName.IsEnabled = false;
+            DecMDToken.IsEnabled = true;
+        }
+        private void IsMN_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DecName.IsEnabled = false;
+            DecMDToken.IsEnabled = false;
+        }
+        private void IsMD_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DecName.IsEnabled = false;
+            DecMDToken.IsEnabled = false;
         }
         #endregion
     }
