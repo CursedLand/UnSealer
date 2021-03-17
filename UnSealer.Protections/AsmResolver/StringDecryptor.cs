@@ -88,7 +88,7 @@ namespace UnSealer.Protections.AsmResolver
 
                 var CurrentT = rMethodParams[pi++].ParameterType;
 
-                
+
 
                 if (CurrentT == typeof(String) || CurrentT == typeof(string))
                     Result = (string)IL[x].Operand;
@@ -113,7 +113,7 @@ namespace UnSealer.Protections.AsmResolver
                 else if (CurrentT == typeof(Char) || CurrentT == typeof(char))
                     Result = Result == null ? Convert.ToChar(IL[x].GetLdcI4Constant()) : (char)Result;
                 else
-                    Result = Convert.ChangeType(IL[x].Operand, CurrentT);
+                    Result = Result == null ? Convert.ChangeType(IL[x].Operand, CurrentT) : Convert.ChangeType(Result, CurrentT);
 
                 Parsed[pp++] = Result;
 
