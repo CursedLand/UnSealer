@@ -16,7 +16,7 @@
 
 # How To Make Your Awesome Plugin ?!
 
-- 1 - Add Latest UnSealer.Core.dll To Your Project -> [Click-To-Download-Latest-Core](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
+- 1 - Add Latest UnSealer.Core.dll To Your Project -> [Click-To-Download-Latest-Core](https://github.com/CursedLand/UnSealer/releases/tag/2.0)
 - 2 - Make New Class And Implement Protection Abstract Class
 - 3 - Name The Protection | Select ProtectionType | Put Author Name !
 - 4 - Finally Write Your Code In Execute void !
