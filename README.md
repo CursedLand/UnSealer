@@ -8,7 +8,7 @@
 - 3 - Click Execute Protections
 
 # Release Download
-- [Click-Me!](https://github.com/CursedLand/UnSealer/releases/tag/1.0)
+- [Click-Me!](https://github.com/CursedLand/UnSealer/releases/tag/2.0)
 
 # String Decryptor Usage ?
 
