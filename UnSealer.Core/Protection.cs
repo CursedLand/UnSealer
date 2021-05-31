@@ -1,27 +1,30 @@
 ﻿namespace UnSealer.Core
 {
+    /// <summary>
+    /// Protection Inheritance.
+    /// </summary>
     public abstract class Protection
     {
         /// <summary>
-        /// Name Of Protection 
+        /// Pipeline Initializer.
+        /// </summary>
+        /// <param name="Pipeline">Pipeline.</param>
+        public abstract void InitPipeline(Context context, Pipeline pipeline);
+        /// <summary>
+        /// Name Of Protection.
         /// </summary>
         public abstract string Name { get; }
         /// <summary>
-        /// Name Of The Author
-        /// </summary>
-        public abstract string Author { get; }
-        /// <summary>
-        /// A Quite Description For Protection
+        /// Description Of Protection.
         /// </summary>
         public abstract string Description { get; }
         /// <summary>
-        /// Type Of Lib Used
+        /// Id Of Protection.
         /// </summary>
-        public abstract ProtectionType Type { get; }
+        public abstract string Id { get; }
         /// <summary>
-        /// Executing Phase
+        /// Protection Author.
         /// </summary>
-        /// <param name="Context"> Context Which Have Good Settings For Starting :) </param>
-        public abstract void Execute(Context Context);
+        public abstract string Author { get; }
     }
 }

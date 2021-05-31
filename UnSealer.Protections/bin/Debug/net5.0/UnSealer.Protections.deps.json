@@ -1,0 +1,117 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "UnSealer.Protections/3.0": {
+        "dependencies": {
+          "UnSealer.Core": "1.0.0"
+        },
+        "runtime": {
+          "UnSealer.Protections.dll": {}
+        }
+      },
+      "AsmResolver/4.5.1": {
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "AsmResolver.DotNet/4.5.1": {
+        "dependencies": {
+          "AsmResolver.PE": "4.5.1",
+          "System.Text.Json": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.DotNet.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "AsmResolver.PE/4.5.1": {
+        "dependencies": {
+          "AsmResolver.PE.File": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.PE.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "AsmResolver.PE.File/4.5.1": {
+        "dependencies": {
+          "AsmResolver": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.PE.File.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
+          }
+        }
+      },
+      "System.Text.Json/5.0.0": {},
+      "UnSealer.Core/1.0.0": {
+        "dependencies": {
+          "AsmResolver.DotNet": "4.5.1"
+        },
+        "runtime": {
+          "UnSealer.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UnSealer.Protections/3.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AsmResolver/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NbC4meoGQBbwOve6GI2JMuk09MBIZBoiTV0oDjzBLkqpFQ5/qt7cHK/QFNGJcdtde9Ae6c7RvO1iLkI0JczXpw==",
+      "path": "asmresolver/4.5.1",
+      "hashPath": "asmresolver.4.5.1.nupkg.sha512"
+    },
+    "AsmResolver.DotNet/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-faNgqpZnKmmR6H7kLRPI77EIExlR+pBIhDSzlexBbpCinJijRr31p0+YfOTp1DCM7unyayNZO2AflqeoLjn+vQ==",
+      "path": "asmresolver.dotnet/4.5.1",
+      "hashPath": "asmresolver.dotnet.4.5.1.nupkg.sha512"
+    },
+    "AsmResolver.PE/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6cA2E+RuCfqYb6vVg8UHQ4jcPfCTTq9zHJqtJLqD/od1aRDQBI3ZUSFTKr6iJ6meB+a4VHqkTUn1KmpLTi33LQ==",
+      "path": "asmresolver.pe/4.5.1",
+      "hashPath": "asmresolver.pe.4.5.1.nupkg.sha512"
+    },
+    "AsmResolver.PE.File/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jqY72VY1M4fJ/0YRqdgA4OcsexO83gnBGFCKBo363Qc+jyrBxOhVfTjp9bKngRVZphkBarrShCsf4fcKQGIu4w==",
+      "path": "asmresolver.pe.file/4.5.1",
+      "hashPath": "asmresolver.pe.file.4.5.1.nupkg.sha512"
+    },
+    "System.Text.Json/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "path": "system.text.json/5.0.0",
+      "hashPath": "system.text.json.5.0.0.nupkg.sha512"
+    },
+    "UnSealer.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

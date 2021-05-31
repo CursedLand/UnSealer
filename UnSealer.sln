@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnSealer", "..\UnSealer\UnSealer\UnSealer.csproj", "{540DCF66-C4BA-4E6E-8D48-A68FAEEDA4E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnSealer.Core", "UnSealer.Core\UnSealer.Core.csproj", "{B7E79559-5883-4289-BE89-07DF2DEFE502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnSealer.Core", "..\UnSealer\UnSealer.Core\UnSealer.Core.csproj", "{ED26512C-BA4B-43D5-952C-AA8767875984}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnSealer.CLI", "UnSealer.CLI\UnSealer.CLI.csproj", "{37648FF3-30C0-453D-8D90-B5572F50AFE4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA82FFEC-58F6-4695-996E-E641534240E0} = {DA82FFEC-58F6-4695-996E-E641534240E0}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnSealer.Protections", "..\UnSealer\UnSealer.Protections\UnSealer.Protections.csproj", "{289794B7-CBC2-4FA3-863D-73289A9B593A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnSealer.Protections", "UnSealer.Protections\UnSealer.Protections.csproj", "{DA82FFEC-58F6-4695-996E-E641534240E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +18,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{540DCF66-C4BA-4E6E-8D48-A68FAEEDA4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{540DCF66-C4BA-4E6E-8D48-A68FAEEDA4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{540DCF66-C4BA-4E6E-8D48-A68FAEEDA4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{540DCF66-C4BA-4E6E-8D48-A68FAEEDA4E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED26512C-BA4B-43D5-952C-AA8767875984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED26512C-BA4B-43D5-952C-AA8767875984}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED26512C-BA4B-43D5-952C-AA8767875984}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED26512C-BA4B-43D5-952C-AA8767875984}.Release|Any CPU.Build.0 = Release|Any CPU
-		{289794B7-CBC2-4FA3-863D-73289A9B593A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{289794B7-CBC2-4FA3-863D-73289A9B593A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{289794B7-CBC2-4FA3-863D-73289A9B593A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{289794B7-CBC2-4FA3-863D-73289A9B593A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7E79559-5883-4289-BE89-07DF2DEFE502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E79559-5883-4289-BE89-07DF2DEFE502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E79559-5883-4289-BE89-07DF2DEFE502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E79559-5883-4289-BE89-07DF2DEFE502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37648FF3-30C0-453D-8D90-B5572F50AFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37648FF3-30C0-453D-8D90-B5572F50AFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37648FF3-30C0-453D-8D90-B5572F50AFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37648FF3-30C0-453D-8D90-B5572F50AFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA82FFEC-58F6-4695-996E-E641534240E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA82FFEC-58F6-4695-996E-E641534240E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA82FFEC-58F6-4695-996E-E641534240E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA82FFEC-58F6-4695-996E-E641534240E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

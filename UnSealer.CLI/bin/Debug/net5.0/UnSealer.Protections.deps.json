@@ -1,0 +1,188 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "UnSealer.Protections/3.0": {
+        "dependencies": {
+          "AsmResolver.DotNet": "4.6.0",
+          "UnSealer.Core": "3.0.0",
+          "Echo.Concrete": "0.9.0.0",
+          "Echo.ControlFlow": "0.9.0.0",
+          "Echo.Core": "0.9.0.0",
+          "Echo.DataFlow": "0.9.0.0",
+          "Echo.Platforms.AsmResolver": "0.9.0.0"
+        },
+        "runtime": {
+          "UnSealer.Protections.dll": {}
+        }
+      },
+      "AsmResolver/4.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "AsmResolver.DotNet/4.6.0": {
+        "dependencies": {
+          "AsmResolver.PE": "4.6.0",
+          "System.Text.Json": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.DotNet.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "AsmResolver.PE/4.6.0": {
+        "dependencies": {
+          "AsmResolver.PE.File": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.PE.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "AsmResolver.PE.File/4.6.0": {
+        "dependencies": {
+          "AsmResolver": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AsmResolver.PE.File.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "System.Text.Json/5.0.0": {},
+      "UnSealer.Core/3.0.0": {
+        "dependencies": {
+          "AsmResolver.DotNet": "4.6.0"
+        },
+        "runtime": {
+          "UnSealer.Core.dll": {}
+        }
+      },
+      "Echo.Concrete/0.9.0.0": {
+        "runtime": {
+          "Echo.Concrete.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        }
+      },
+      "Echo.ControlFlow/0.9.0.0": {
+        "runtime": {
+          "Echo.ControlFlow.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        }
+      },
+      "Echo.Core/0.9.0.0": {
+        "runtime": {
+          "Echo.Core.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        }
+      },
+      "Echo.DataFlow/0.9.0.0": {
+        "runtime": {
+          "Echo.DataFlow.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        }
+      },
+      "Echo.Platforms.AsmResolver/0.9.0.0": {
+        "runtime": {
+          "Echo.Platforms.AsmResolver.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UnSealer.Protections/3.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AsmResolver/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/rGykz817njDGi5wwEmetjfSMfBtmCe5zBkiU7XJK+H1DcygXjQcd9ODZJ4wCkhSL65tel2s3D+hLAbn8vXzVQ==",
+      "path": "asmresolver/4.6.0",
+      "hashPath": "asmresolver.4.6.0.nupkg.sha512"
+    },
+    "AsmResolver.DotNet/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hiyKAIHrOurIVCN/H5IXFSLKtwqkky0+xjlvvntZLjM3Yk+jD/DpZ3qitRMjxQdW0bJ7sUp3gupOnlYHvlDa+A==",
+      "path": "asmresolver.dotnet/4.6.0",
+      "hashPath": "asmresolver.dotnet.4.6.0.nupkg.sha512"
+    },
+    "AsmResolver.PE/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5E5oDWOkJNBTJ8815/lpG3hjif/3XgsX9UelCG8GYsyZbyVFdnAfr0KohgY2hYbrWrYi5vgOdL6mSAM8tH+cVg==",
+      "path": "asmresolver.pe/4.6.0",
+      "hashPath": "asmresolver.pe.4.6.0.nupkg.sha512"
+    },
+    "AsmResolver.PE.File/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M8ytebaNAH+C8kGOyxhGhDoH0K3I2Pop0gr1YVP69/dRyUGnPRTDzcPX0cxVU0DA4mAXMxcs0cEIyui+WZAHOA==",
+      "path": "asmresolver.pe.file/4.6.0",
+      "hashPath": "asmresolver.pe.file.4.6.0.nupkg.sha512"
+    },
+    "System.Text.Json/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "path": "system.text.json/5.0.0",
+      "hashPath": "system.text.json.5.0.0.nupkg.sha512"
+    },
+    "UnSealer.Core/3.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Echo.Concrete/0.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Echo.ControlFlow/0.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Echo.Core/0.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Echo.DataFlow/0.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Echo.Platforms.AsmResolver/0.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

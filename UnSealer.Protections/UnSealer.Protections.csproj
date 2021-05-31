@@ -1,82 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{289794B7-CBC2-4FA3-863D-73289A9B593A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnSealer.Protections</RootNamespace>
-    <AssemblyName>UnSealer.Protections</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>3.0</Version>
+    <Authors>CLand</Authors>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.CLI\bin\Debug\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="AsmResolver.DotNet" Version="4.6.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="AsmResolver\CalliFixer.cs" />
-    <Compile Include="AsmResolver\MathRemover.cs" />
-    <Compile Include="Dnlib\AntiTamperRemover.cs" />
-    <Compile Include="Dnlib\Int2FieldFixer.cs" />
-    <Compile Include="Dnlib\SizeOfFixer.cs" />
-    <Compile Include="AsmResolver\StringDecryptor.cs" />
-    <Compile Include="Dnlib\AntiInvokePatch.cs" />
-    <Compile Include="Dnlib\CawkDevirt.cs" />
-    <Compile Include="Dnlib\CyphorConstants.cs" />
-    <Compile Include="Dnlib\JunkRemover.cs" />
-    <Compile Include="Dnlib\OutlinerFixer.cs" />
-    <Compile Include="Dnlib\StringLenFixer.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ProjectReference Include="..\UnSealer.Core\UnSealer.Core.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="AsmResolver">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="AsmResolver.DotNet">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="AsmResolver.PE">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="AsmResolver.PE.File">
-      <Version>4.4.0</Version>
-    </PackageReference>
-    <PackageReference Include="dnlib">
-      <Version>3.3.2</Version>
-    </PackageReference>
+    <Reference Include="Echo.Concrete">
+      <HintPath>..\deps\Echo.Concrete.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.ControlFlow">
+      <HintPath>..\deps\Echo.ControlFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.Core">
+      <HintPath>..\deps\Echo.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.DataFlow">
+      <HintPath>..\deps\Echo.DataFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.Platforms.AsmResolver">
+      <HintPath>..\deps\Echo.Platforms.AsmResolver.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnSealer.Core\UnSealer.Core.csproj">
-      <Project>{ed26512c-ba4b-43d5-952c-aa8767875984}</Project>
-      <Name>UnSealer.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

@@ -1,0 +1,12 @@
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.csprojAssemblyReference.cache
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.AssemblyInfoInputs.cache
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.AssemblyInfo.cs
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.csproj.CoreCompileInputs.cache
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\bin\Debug\net5.0\UnSealer.Core.deps.json
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\bin\Debug\net5.0\UnSealer.Core.dll
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\bin\Debug\net5.0\ref\UnSealer.Core.dll
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\bin\Debug\net5.0\UnSealer.Core.pdb
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.dll
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\ref\UnSealer.Core.dll
+C:\Users\CLand\source\repos\Github\UnSealer\UnSealer.Core\obj\Debug\net5.0\UnSealer.Core.pdb

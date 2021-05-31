@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "UL/LoCi6LjMfQplmqfvL+cAPhBTCWbbuI9h2sdB7/jxpyybx3XuhJOkeZK5XjtX3APSyKyVVLn2X5FZB8P4+iA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CLand\\source\\repos\\Github\\UnSealer\\UnSealer.Core\\UnSealer.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CLand\\.nuget\\packages\\asmresolver\\4.6.0\\asmresolver.4.6.0.nupkg.sha512",
+    "C:\\Users\\CLand\\.nuget\\packages\\asmresolver.dotnet\\4.6.0\\asmresolver.dotnet.4.6.0.nupkg.sha512",
+    "C:\\Users\\CLand\\.nuget\\packages\\asmresolver.pe\\4.6.0\\asmresolver.pe.4.6.0.nupkg.sha512",
+    "C:\\Users\\CLand\\.nuget\\packages\\asmresolver.pe.file\\4.6.0\\asmresolver.pe.file.4.6.0.nupkg.sha512",
+    "C:\\Users\\CLand\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

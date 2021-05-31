@@ -1,105 +1,70 @@
-﻿using AsmResolver.DotNet;
+﻿
+#region Usings
+using AsmResolver.DotNet;
 using AsmResolver.DotNet.Builder;
-using AsmResolver.DotNet.Code.Cil;
-using AsmResolver.PE.DotNet.Builder;
-using dnlib.DotNet;
-using dnlib.DotNet.Writer;
+using AsmResolver.DotNet.Serialized;
+using System;
+using System.IO;
 using System.Reflection;
+#endregion
 
 namespace UnSealer.Core
 {
     public class Context
     {
-        /// <summary>
-        /// Initialize For Context
-        /// </summary>
-        /// <param name="Location"> Module Path </param>
-        /// <param name="Logger"> Logger's We Created On MainWindow ;D </param>
-        public Context(string Location, Logger[] Logger)
+        public Context(string path, ILogger logger)
         {
-            PathIs = Location;
-            AsmModule = ModuleDefinition.FromFile(PathIs);
-            DnModule = ModuleDefMD.Load(PathIs);
-            Log = Logger[0];
-            StringLog = Logger[1];
-                                                                                       // Due To Some UnManged methods :(
-            try { SysModule = Assembly.UnsafeLoadFrom(PathIs).ManifestModule; } catch { Log.Error("Failed Maintaining Reflection Module !"); }
-        }
-        /// <summary>
-        /// Saves Assembly After Modifications
-        /// </summary>
-        public void SaveContext()
-        {
-            string NewPath = PathIs.Insert(PathIs.Length - 4, "HereWeGo"); // Thx 4 drakoniа#0601 for the insert trick :D
-            if (DnModule != null)
+            ModulePath = path;
+            Logger = logger;
+            try
             {
-                if (DnModule.IsILOnly)
-                {
-                    var MangedWriter = new ModuleWriterOptions(DnModule)
-                    {
-                        Logger = DummyLogger.NoThrowInstance,
-                        MetadataOptions = { Flags = MetadataFlags.PreserveAll }
-                    };
-                    DnModule.Write(NewPath.Replace("HereWeGo", "-DnLibed"), MangedWriter);
-                    Log.Info("Done Saved Manged Dnlib Module");
-                }
-                else
-                {
-                    var UnMangedWriter = new NativeModuleWriterOptions(DnModule, false)
-                    {
-                        Logger = DummyLogger.NoThrowInstance,
-                        MetadataOptions = { Flags = MetadataFlags.PreserveAll }
-                    };
-                    DnModule.NativeWrite(NewPath.Replace("HereWeGo", "-DnLibed"), UnMangedWriter);
-                    Log.Info("Done Saved Native Dnlib Module");
-                }
+                Module = ModuleDefinition.FromFile(ModulePath,
+                    new ModuleReaderParameters(Path.GetDirectoryName(ModulePath)));
+                Factory = new();
+                ImageBuilder = new(Factory);
+                Importer = new(Module);
+                Mscorlib = Module.CorLibTypeFactory.CorLibScope.GetAssembly().Resolve().ManifestModule;
             }
-            if (AsmModule != null)
+            catch (BadImageFormatException)
             {
-                var IMPEIB = new ManagedPEImageBuilder()
-                {
-                    DotNetDirectoryFactory = new DotNetDirectoryFactory() 
-                    {
-                        MetadataBuilderFlags = MetadataBuilderFlags.PreserveAll,
-                        MethodBodySerializer = new CilMethodBodySerializer 
-                        {
-                            ComputeMaxStackOnBuildOverride = false 
-                        }
-                    }
-                };
-                var IR = IMPEIB.CreateImage(AsmModule);
-                var FBuilder = new ManagedPEFileBuilder();
-                var File = FBuilder.CreateFile(IR.ConstructedImage);
-                if (!IR.DiagnosticBag.IsFatal)
-                    File.Write(NewPath.Replace("HereWeGo", "-AsmResolved")); // Ignore Errors.
-                else
-                    AsmModule.Write(NewPath.Replace("HereWeGo", "-AsmResolved"), IMPEIB);
-                Log.Info("Done Saved AsmResolver Module");
+                Logger.ErrorFormat("{0} Is Not .NET File!", Path.GetFileNameWithoutExtension(ModulePath));
+            }
+            catch (Exception e)
+            {
+                Logger.ErrorFormat("Error Happened While Loading Module : {0}", e.Message);
+            }
+            try
+            {
+                MemoryStream TempStream = new MemoryStream();
+                ModuleDefinition TempModule = ModuleDefinition.FromFile(ModulePath);
+                TempModule.IsILOnly = true;
+                TempModule.Write(TempStream, new ManagedPEImageBuilder(MetadataBuilderFlags.PreserveAll));
+                ReflectionCorlib = Assembly.Load(TempStream.ToArray()).ManifestModule;
+            }
+            catch
+            {
+                logger.Warn("Corlib Reflection Module Can't Load.");
+            }
+            try
+            {
+                ReflectionModule = Assembly.UnsafeLoadFrom(ModulePath).ManifestModule;
+            }
+            catch
+            {
+                logger.Warn("Reflection Module Can't Load.");
             }
         }
-        /// <summary>
-        /// Module In Dnlib Way
-        /// </summary>
-        public ModuleDefMD DnModule { set; get; }
-        /// <summary>
-        /// Module In AsmReslover Way
-        /// </summary>
-        public ModuleDefinition AsmModule { set; get; }
-        /// <summary>
-        /// Module In Reflection Way ( For Plugins Who Uses Invoke etc. )
-        /// </summary>
-        public Module SysModule { set; get; }
-        /// <summary>
-        /// Logger.
-        /// </summary>
-        public Logger Log { set; get; }
-        /// <summary>
-        /// String Logger.
-        /// </summary>
-        public Logger StringLog { set; get; }
-        /// <summary>
-        /// Path Loaded On Initialize Constructor
-        /// </summary>
-        private string PathIs { set; get; }
+        public ReferenceImporter Importer { get; }
+        public bool IsReflectionSafe => ReflectionModule != null;
+        public bool IsReflectionCorlibSafe => ReflectionCorlib != null;
+        public DotNetDirectoryFactory Factory { get; }
+        public ManagedPEImageBuilder ImageBuilder { get; }
+        public Pipeline Pipeline { set; get; }
+        public ModuleDefinition Module { set; get; }
+        public ModuleDefinition Mscorlib { get; }
+        public Module ReflectionModule { get; }
+        public Module ReflectionCorlib { get; }
+        public string ModulePath { get; }
+        public ILogger Logger { set; get; }
     }
 }
