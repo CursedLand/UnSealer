@@ -27,3 +27,7 @@ dotnet build
 
 # CLI-Preview
 ![alt text](https://github.com/CursedLand/UnSealer/blob/master/CLIPreview.PNG)
+
+# Credits
+- [AsmResolver](https://github.com/Washi1337/AsmResolver)
+- [Echo](https://github.com/Washi1337/Echo)
