@@ -96,7 +96,7 @@ namespace UnSealer.Protections.Misc {
                             #endregion
                             #endregion
                             /* Assume Fake Parameter. */
-                            if (S == default) S = Convert.ChangeType(default, PType);
+                            if (S == default) S = Convert.ChangeType(new object(), PType);
                             IOSlot[Count] = S;
                         }
                         try {
