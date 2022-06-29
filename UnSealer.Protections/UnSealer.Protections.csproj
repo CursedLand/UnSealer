@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UnSealer.Core\UnSealer.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Echo.Concrete">
+      <HintPath>..\Echo\Echo.Concrete.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.ControlFlow">
+      <HintPath>..\Echo\Echo.ControlFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.Core">
+      <HintPath>..\Echo\Echo.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.DataFlow">
+      <HintPath>..\Echo\Echo.DataFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Echo.Platforms.AsmResolver">
+      <HintPath>..\Echo\Echo.Platforms.AsmResolver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
